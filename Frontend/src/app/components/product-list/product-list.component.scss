@@ -1,0 +1,84 @@
+$default-font-color: #505456;
+$default-font-color-hover: #3762e4;
+$background: #f6f6f6;
+
+.row {
+  gap: 50px;
+}
+
+// CARD START
+.card {
+  border: none !important;;
+  height: 600px;
+  width: 300px;
+  background-color: $background;
+}
+
+.card img {
+  width: 300px;
+  height: auto;
+  transition: all .40s;
+}
+
+.card img:hover {
+  transform: scale(0.9);
+
+}
+
+.card h5 {
+  position: absolute;
+  top: 19px;
+  left: 27px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: $default-font-color-hover;
+  padding: 4px 9px;
+  border-radius: 3px;
+}
+
+.feedback {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedback .heart-icon {
+  cursor: pointer;
+  font-size: 19px;
+  margin-left: 20px;
+}
+
+.feedback .heart-icon:hover {
+  color: #e63054;
+}
+
+.price h4 {
+  text-transform: capitalize;
+  font-size: 19px;
+  font-weight: 400;
+  height: 60px;
+}
+
+.price p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+button {
+  display: inline;
+  color: $default-font-color-hover;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  border: 2px solid $default-font-color-hover;
+  transition: all .20s ease;
+}
+
+button:hover {
+  color: white;
+  background-color: $default-font-color-hover;
+}
+
+// CARD END

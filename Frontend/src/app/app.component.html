@@ -1,6 +1,74 @@
-<div class="container">
-  <h1 class="mt-3 mb-3">
-    Products
-  </h1>
-  <app-product-list></app-product-list>
-</div>
+<!-- HEADER START -->
+<header>
+  <a href="#" class="logo">
+    <img src="/assets/images/logo.png" alt="">
+  </a>
+  <ul class="nav-menu">
+    <li> <a routerLink="/category/1" routerLinkActive="active-link">Books</a> </li>
+    <li> <a routerLink="/category/2" routerLinkActive="active-link">Coffee Mugs</a> </li>
+    <!-- <li> <a href="#">Mouse Pads</a> </li>
+    <li> <a href="#">Luggage Tags</a> </li> -->
+  </ul>
+
+  <div class="nav-icon">
+    <a href="#"><i class='bx bx-search'></i></a>
+    <a href="#"><i class='bx bxs-user' ></i></a>
+    <a href="#"><i class='bx bx-cart'></i></a>
+
+    <div class="bx bx-menu bx-sm" id="menu-icon"></div>
+  </div>
+</header>
+<!-- HEADER END -->
+
+<!-- MAIN CONTENT START -->
+<section class="main-content">
+  <div class="main-text">
+    <h5>See our newest development books!</h5>
+    <h1>New Book collection</h1>
+    <p>Be a web developer!</p>
+    <a href="#" class="main-btn">Shop Now <i class='bx bx-right-arrow-alt'></i></a>
+  </div>
+
+  <div class="down-arrow">
+    <a href="#products" class="down"><i class='bx bx-down-arrow-alt'></i></a>
+  </div>
+</section>
+<!-- MAIN CONTENT END -->
+
+<!-- PRODUCTS START -->
+<section class="trending-product" id="products">
+  <div class="center-text">
+    <h2>Our Trending <span>Products</span></h2>
+  </div>
+
+  <router-outlet></router-outlet>
+</section>
+<!-- PRODUCTS END -->
+
+<!-- CONTACT START -->
+<section class="contact">
+  <div class="contact-info">
+    <img src="/assets/images/logo.png" width="90" height="auto">
+    <div class="first-infos">
+      <h4>Contact</h4>
+      <p>Your Address In Here!</p>
+      <p>00.000.000/0001-00</p>
+      <p>mathffreitas@hotmail.com</p>
+      <div class="social-icon">
+        <a href="#"> <i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="second-info">
+      <h4>Support</h4>
+      <p>Contact us</p>
+      <p>Privacy</p>
+    </div>
+  </div>
+</section>
+<!-- CONTACT END -->
+
+<!-- FOOTER START -->
+<footer>
+  <p>Copyright © @2022. Developed by: Matheus Freitas.</p>
+</footer>
+<!-- FOOTER END -->
