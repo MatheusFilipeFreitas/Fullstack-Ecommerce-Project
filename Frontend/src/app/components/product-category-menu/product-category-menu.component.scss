@@ -1,0 +1,36 @@
+$default-font-color: #505456;
+$default-font-color-hover: #3762e4;
+$background: #f6f6f6;
+
+.nav-menu {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-menu a {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 400;
+  transition: all .50s ease;
+  color: $default-font-color;
+  text-decoration: none;
+}
+
+.nav-menu a:hover {
+  color: $default-font-color-hover;
+}
+
+.active-link {
+  border-bottom: 2px solid $default-font-color-hover;
+  cursor: default;
+}
+
+@media(max-width: 900px) {
+  .nav-menu, .nav-menu ul, .nav-menu li, .nav-menu ul li a{
+    display: none;
+    transition: all .50s ease;
+  }
+}

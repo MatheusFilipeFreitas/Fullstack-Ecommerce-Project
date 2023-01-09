@@ -1,6 +1,15 @@
 $default-font-color: #505456;
 $default-font-color-hover: #3762e4;
 $background: #f6f6f6;
+
+.header-search.show {
+  display: flex;
+}
+
+.header-search.hidden {
+  display: none;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -24,28 +33,45 @@ header {
   background-color: $background;
 }
 
+header .bx-search:hover {
+  border: 2px solid $default-font-color-hover;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.header-search {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 40px 15px 7%;
+  background-color: $background;
+}
+
+.header-search i {
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.header-search .bx-x {
+  margin-left: 30px;
+  font-size: 27px;
+  color: #e63054;
+  transition: all 0.45s ease;
+}
+
+.header-search .bx-x:hover {
+  color: #c12847;
+  transform: scale(1.1);
+}
+
 header .logo img {
   max-width: 43px;
   height: auto;
-}
-
-header .nav-menu {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
-  gap: 25px;
-}
-
-header .nav-menu a {
-  font-size: 18px;
-  text-transform: capitalize;
-  font-weight: 400;
-  transition: all .50s ease;
-  color: $default-font-color;
-}
-
-header .nav-menu a:hover {
-  color: $default-font-color-hover;
 }
 
 header .nav-icon {
@@ -58,7 +84,8 @@ header .nav-icon {
 header .nav-icon a i {
   font-size: 20px;
   color: $default-font-color;
-  transition: all .50s ease;
+  cursor: pointer;
+  transition: all 0.45s ease;
 }
 
 header .nav-icon a i:hover {
@@ -67,7 +94,7 @@ header .nav-icon a i:hover {
 }
 
 .active-link {
-  color: $default-font-color-hover;
+  border-bottom: 2px solid $default-font-color-hover;
   cursor: default;
 }
 
@@ -85,129 +112,13 @@ header .nav-icon a i:hover {
   }
 }
 
-@media(max-width: 750px) {
-  .nav-menu, .nav-menu ul, .nav-menu li, .nav-menu ul li a{
-    display: none;
-    transition: all .50s ease;
-  }
+@media(max-width: 900px) {
   #menu-icon {
     display: block;
     transition: all .50s ease;
   }
 }
 // HEADER END
-
-// MAIN CONTENT START
-section {
-  padding: 7% 8%;
-  background-color: $background;
-}
-
-.main-content {
-  width: 100%;
-  height: 100vh;
-  background-image: url(/assets/images/banner/banner-3.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  align-items: center;
-}
-.main-text h5 {
-  color: $default-font-color-hover;
-  font-size: 18px;
-  text-transform: capitalize;
-  font-weight: 500;
-}
-
-.main-text h1 {
-  color: black;
-  text-transform: capitalize;
-  line-height: 1.1;
-  font-weight: 600;
-  margin: 7px 0 12px;
-}
-
-.main-text p {
-  color: $default-font-color;
-  font-size: 20px;
-  margin-bottom: 30px;
-}
-
-.main-btn {
-  display: inline;
-  color: $default-font-color-hover;
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: capitalize;
-  padding: 10px 20px;
-  border: 2px solid $default-font-color-hover;
-  transition: all .20s ease;
-}
-
-.main-btn:hover {
-  color: white;
-  background-color: $default-font-color-hover;
-}
-
-.down-arrow {
-  position: absolute;
-  top: 83%;
-  right: 10%;
-}
-
-.down i {
-  font-size: 40px;
-  color: $default-font-color;
-  border: 2px solid $default-font-color;
-  border-radius: 50px;
-  padding: 12px 12px;
-  transition: all .30s ease;
-}
-
-.down i:hover {
-  color: white;
-  background-color: $default-font-color-hover;
-  border: 2px solid $default-font-color-hover;
-}
-
-
-@media(max-width: 630px) {
-  .main-content {
-    background-position:inherit;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: .4s;
-  }
-
-  .main-text h1 {
-    font-size: 50px;
-    transition: .4s;
-  }
-  .main-text p {
-    font-size: 18px;
-    transition: .4s;
-  }
-}
-// MAIN CONTENT END
-
-.center-text h2{
-  text-align: center;
-  font-size: 30px;
-  text-transform: capitalize;
-  font-weight: 600;
-  margin-bottom: 80px;
-  margin-top: 60px;
-}
-
-.center-text span {
-  color: $default-font-color-hover;
-}
-
-.row {
-  gap: 50px;
-}
 
 // CARD START
 .card {
@@ -272,6 +183,7 @@ section {
 // CONTACT START
 
 .contact {
+  padding: 20px;
   background-color: #dedfe0;
 }
 

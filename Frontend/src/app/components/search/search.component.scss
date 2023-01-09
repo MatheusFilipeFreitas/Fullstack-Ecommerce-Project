@@ -1,0 +1,48 @@
+$default-font-color: #505456;
+$default-font-color-hover: #3762e4;
+$background: #f6f6f6;
+
+:host, .form-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+i {
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.bx-search:hover {
+  border: 2px solid $default-font-color-hover;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+#search {
+  width: 100%;
+  max-width: 400px;
+  line-height: 20px;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid $default-font-color;
+  transition: all 0.45s ease;
+  border: none;
+  border-bottom: 1px solid black;
+  background: $background;
+  caret-color: $default-font-color-hover;
+}
+
+.bx-search {
+  margin-right: 15px;
+  font-size: 20px;
+  transition: all 0.45s ease;
+}
+
+.bx-search:hover {
+  color: #2848a7;
+  transform: scale(1.1);
+}

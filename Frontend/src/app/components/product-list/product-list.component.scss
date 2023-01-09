@@ -2,14 +2,38 @@ $default-font-color: #505456;
 $default-font-color-hover: #3762e4;
 $background: #f6f6f6;
 
+.products {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-text h2{
+  text-align: center;
+  font-size: 30px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+.center-text span {
+  color: $default-font-color-hover;
+}
+
 .row {
+  max-width: 1300px;
   gap: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 // CARD START
 .card {
   border: none !important;;
-  height: 600px;
+  height: 450px;
   width: 300px;
   background-color: $background;
 }

@@ -1,6 +1,8 @@
 
-
 <div class="products">
+  <div class="center-text">
+    <h2>Our Trending <span>{{ (currentCategoryName == "") ? "Products" : currentCategoryName }}</span></h2>
+  </div>
   <div class="row">
 
     <!-- CARD START -->
@@ -28,5 +30,10 @@
       <button>Add to Cart</button>
     </div>
     <!-- CARD END -->
+
+    <!-- if products empty then display a message -->
+    <div *ngIf="products?.length == 0" class="alert alert-primary col-md-12" role="alert">
+      No products found.
+    </div>
   </div>
 </div>

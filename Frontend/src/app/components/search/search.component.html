@@ -1,0 +1,5 @@
+<form class="form-header" onsubmit="return false" method="GET">
+  <a (click)="doSearch(myInput.value.trim())"><i class='bx bx-search'></i></a>
+  <input #myInput type="text" id="search" placeholder="Search..." autocomplete="on" (keyup)="doSearch(myInput.value.trim())">
+</form>
+

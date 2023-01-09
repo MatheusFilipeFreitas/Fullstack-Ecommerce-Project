@@ -1,46 +1,26 @@
 <!-- HEADER START -->
 <header>
-  <a href="#" class="logo">
+  <a routerLink="/home" class="logo">
     <img src="/assets/images/logo.png" alt="">
   </a>
-  <ul class="nav-menu">
-    <li> <a routerLink="/category/1" routerLinkActive="active-link">Books</a> </li>
-    <li> <a routerLink="/category/2" routerLinkActive="active-link">Coffee Mugs</a> </li>
-    <!-- <li> <a href="#">Mouse Pads</a> </li>
-    <li> <a href="#">Luggage Tags</a> </li> -->
-  </ul>
 
+  <app-product-category-menu></app-product-category-menu>
   <div class="nav-icon">
-    <a href="#"><i class='bx bx-search'></i></a>
+    <a (click)="showSearchBar()"><i class='bx bx-search'></i></a>
     <a href="#"><i class='bx bxs-user' ></i></a>
     <a href="#"><i class='bx bx-cart'></i></a>
-
     <div class="bx bx-menu bx-sm" id="menu-icon"></div>
   </div>
 </header>
+
+<div class="header-search" [ngClass]="showSearch == true ? 'show' : 'hidden'">
+  <app-search></app-search>
+  <a (click)="hideSearchBar()"><i class='bx bx-x'></i></a>
+</div>
 <!-- HEADER END -->
 
-<!-- MAIN CONTENT START -->
-<section class="main-content">
-  <div class="main-text">
-    <h5>See our newest development books!</h5>
-    <h1>New Book collection</h1>
-    <p>Be a web developer!</p>
-    <a href="#" class="main-btn">Shop Now <i class='bx bx-right-arrow-alt'></i></a>
-  </div>
-
-  <div class="down-arrow">
-    <a href="#products" class="down"><i class='bx bx-down-arrow-alt'></i></a>
-  </div>
-</section>
-<!-- MAIN CONTENT END -->
-
 <!-- PRODUCTS START -->
-<section class="trending-product" id="products">
-  <div class="center-text">
-    <h2>Our Trending <span>Products</span></h2>
-  </div>
-
+<section class="trending-product" id="trending">
   <router-outlet></router-outlet>
 </section>
 <!-- PRODUCTS END -->

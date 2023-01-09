@@ -8,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 
 export class AppComponent implements OnInit {
 
+  showSearch: boolean = false;
+
   ngOnInit(): void {
 
   }
   title = 'Frontend';
+
+  showSearchBar() {
+    this.showSearch = true;
+  }
+
+  hideSearchBar() {
+    this.showSearch = false;
+  }
 }
