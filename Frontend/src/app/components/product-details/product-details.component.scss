@@ -1,0 +1,80 @@
+$default-font-color: #505456;
+$default-font-color-hover: #3762e4;
+$background: #f6f6f6;
+
+.product {
+  margin-top: 170px;
+  margin-bottom: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.col-sm {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.row {
+  max-width: 800px;
+  margin-left: 70px;
+  margin-right: 70px;
+  gap: 30px;
+}
+
+img {
+  width: 400px;
+  height: auto;
+}
+
+.feedback {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.feedback .heart-icon {
+  cursor: pointer;
+  font-size: 19px;
+  margin-left: 20px;
+}
+
+.feedback .heart-icon:hover {
+  color: #e63054;
+}
+
+.price h4 {
+  text-transform: capitalize;
+  font-size: 19px;
+  font-weight: 400;
+  height: 60px;
+}
+
+.price p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+button {
+  display: inline;
+  color: $default-font-color-hover;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  border: 2px solid $default-font-color-hover;
+  transition: all .20s ease;
+  width: 100%;
+  background: none;
+}
+
+button:hover {
+  color: white;
+  background-color: $default-font-color-hover;
+}

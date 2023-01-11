@@ -7,7 +7,9 @@
 
     <!-- CARD START -->
     <div class="card" *ngFor="let tempProduct of products">
-      <img src="{{ tempProduct.imageUrl }}">
+      <a routerLink="/products/{{ tempProduct.id }}">
+        <img src="{{ tempProduct.imageUrl }}">
+      </a>
       <div class="product-text">
         <h5>Sale</h5>
       </div>
@@ -24,7 +26,9 @@
         </div>
       </div>
       <div class="price">
-        <h4>{{ tempProduct.name }}</h4>
+        <a routerLink="/products/{{ tempProduct.id }}" class="product-name-link">
+          <h4>{{ tempProduct.name }}</h4>
+        </a>
         <p>{{ tempProduct.unitPrice | currency: 'BRL' }}</p>
       </div>
       <button>Add to Cart</button>
@@ -36,4 +40,5 @@
       No products found.
     </div>
   </div>
+  <ngb-pagination style="margin-top: 80px;" [collectionSize]="theTotalElements" [(page)]="thePageNumber" [pageSize]="thePageSize" (pageChange)="listProducts()" [directionLinks]="false"></ngb-pagination>
 </div>

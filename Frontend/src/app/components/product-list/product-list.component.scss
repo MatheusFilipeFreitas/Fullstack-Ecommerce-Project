@@ -2,6 +2,16 @@ $default-font-color: #505456;
 $default-font-color-hover: #3762e4;
 $background: #f6f6f6;
 
+.product-name-link {
+  text-decoration: none;
+  color: $default-font-color;
+  transition: all .60s ease;
+}
+
+.product-name-link:hover {
+  text-decoration: underline;
+}
+
 .products {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -39,14 +49,15 @@ $background: #f6f6f6;
 }
 
 .card img {
-  width: 300px;
-  height: auto;
+  width: 280px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   transition: all .40s;
 }
 
 .card img:hover {
   transform: scale(0.9);
-
 }
 
 .card h5 {

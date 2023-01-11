@@ -1,0 +1,29 @@
+<div class="product">
+  <div class="row">
+    <div class="col-sm">
+      <img src="{{ product.imageUrl }}">
+    </div>
+    <div class="col-sm">
+      <h2>{{ product.name }}</h2>
+      <div class="description">
+        <p>{{ product.description }}</p>
+      </div>
+      <div class="feedback">
+        <div class="ratting">
+          <i class='bx bx-star' ></i>
+          <i class='bx bx-star' ></i>
+          <i class='bx bx-star' ></i>
+          <i class='bx bx-star' ></i>
+          <i class='bx bx-star' ></i>
+        </div>
+        <div class="heart-icon">
+          <i class='bx bx-heart' ></i>
+        </div>
+      </div>
+      <div class="price">
+        <p>{{ product.unitPrice | currency: 'BRL' }}</p>
+      </div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+</div>
