@@ -9,12 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   showSearch: boolean = false;
-
-  ngOnInit(): void {
-
-  }
   title = 'Frontend';
 
+  constructor() {
+
+  }
+
+  ngOnInit(): void {}
+
+  // Search methods
   showSearchBar() {
     this.showSearch = true;
   }

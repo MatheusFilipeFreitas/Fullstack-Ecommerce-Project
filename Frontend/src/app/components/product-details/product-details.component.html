@@ -23,7 +23,7 @@
       <div class="price">
         <p>{{ product.unitPrice | currency: 'BRL' }}</p>
       </div>
-      <button>Add to Cart</button>
+      <button (click)="addToCart(product)">Add to Cart</button>
     </div>
   </div>
 </div>

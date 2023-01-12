@@ -1,0 +1,59 @@
+ <!-- CART MODAL START -->
+ <ng-template #longContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Card</h4>
+    <h6 class="modal-subtitle">Total Un.: {{ totalQuantity }}</h6>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <ul class="itens-cart">
+
+      <!-- ITEM CART START -->
+
+      <li class="item-cart">
+        <img src="/assets/images/products/placeholder.png" alt="item-img">
+        <div class="item-cart-info">
+          <h5>Product name</h5>
+          <!-- TODO: Add or remove un. -->
+          <p>Un: 3</p>
+          <p>$0.00</p>
+        </div>
+        <div class="total-item-cart-price">
+          <p>Total: $0.00</p>
+        </div>
+        <div class="remove-item">
+          <i class="bx bx-x"></i>
+        </div>
+      </li>
+      <!-- ITEM CART END -->
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <div class="total-info">
+      <p class="show-total">Total: {{ totalPrice | currency: 'BRL' }}</p>
+      <p id="discount">Discount: 0.00%</p>
+      <!-- TODO: Add the discount if is not equal  -->
+      <h6 id="total-price">Total: {{ totalPrice | currency: 'BRL' }}</h6>
+    </div>
+    <div class="buttons">
+      <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')">Keep shopping</button>
+      <button type="button" class="btn btn-outline-success">Checkout</button>
+    </div>
+  </div>
+</ng-template>
+<!-- CART MODAL END -->
+<div class="cart-content">
+  <a (click)="openScrollableContent(longContent)">
+    <i class='bx bx-cart'>
+      <!-- TODO: if cart has itens then show the element above -->
+    <div class="count-itens-number" [ngClass]="totalQuantity > 0 ? 'show' : 'hidden'">
+    </div>
+    </i>
+  </a>
+  <div class="dropdown-hover">
+    <span>{{ totalPrice | currency: 'BRL' }}</span>|<span> {{ totalQuantity }}</span>
+  </div>
+</div>
+
+
+

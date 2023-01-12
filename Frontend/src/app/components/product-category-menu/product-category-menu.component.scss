@@ -28,6 +28,31 @@ $background: #f6f6f6;
   cursor: default;
 }
 
+#dropdownBasic1 {
+  border: none;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 400;
+  transition: all .50s ease;
+  color: $default-font-color;
+  text-decoration: none;
+  padding: 0;
+}
+
+#dropdownBasic1:hover {
+  background: none;
+  color: $default-font-color-hover;
+}
+
+.active-link-dropdown {
+  color: $default-font-color-hover;
+  cursor: default;
+}
+
+.active-link-dropdown:hover {
+  background: none;
+}
+
 @media(max-width: 900px) {
   .nav-menu, .nav-menu ul, .nav-menu li, .nav-menu ul li a{
     display: none;

@@ -31,7 +31,7 @@
         </a>
         <p>{{ tempProduct.unitPrice | currency: 'BRL' }}</p>
       </div>
-      <button>Add to Cart</button>
+      <button (click)="addToCart(tempProduct)">Add to Cart</button>
     </div>
     <!-- CARD END -->
 

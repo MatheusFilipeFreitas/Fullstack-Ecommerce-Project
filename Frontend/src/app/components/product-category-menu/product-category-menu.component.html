@@ -1,7 +1,20 @@
 <ul class="nav-menu">
   <li> <a routerLink="/home" routerLinkActive="active-link">Home</a> </li>
   <li> <a routerLink="/products" routerLinkActive="active-link">Products</a> </li>
-  <li *ngFor="let tempProductCategory of productCategories">
-    <a routerLink="/category/{{ tempProductCategory.id }}/{{ tempProductCategory.categoryName }}" routerLinkActive="active-link">{{ tempProductCategory.categoryName }}</a>
+  <li>
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+        Category
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button *ngFor="let tempProductCategory of productCategories" routerLink="/category/{{ tempProductCategory.id }}/{{ tempProductCategory.categoryName }}" routerLinkActive="active-link-dropdown" ngbDropdownItem class="dropdown-itens-link">{{ tempProductCategory.categoryName }}</button>
+        <!-- <button ngbDropdownItem>Another Action</button>
+        <button ngbDropdownItem>Something else is here</button> -->
+      </div>
+    </div>
   </li>
+
+  <!-- <li *ngFor="let tempProductCategory of productCategories">
+    <a routerLink="/category/{{ tempProductCategory.id }}/{{ tempProductCategory.categoryName }}" routerLinkActive="active-link">{{ tempProductCategory.categoryName }}</a>
+  </li> -->
 </ul>

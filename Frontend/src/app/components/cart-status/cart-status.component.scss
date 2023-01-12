@@ -1,0 +1,184 @@
+$default-font-color: #505456;
+$default-font-color-hover: #3762e4;
+$background: #f6f6f6;
+
+a i {
+  font-size: 24px;
+  color: $default-font-color;
+  cursor: pointer;
+  transition: all 0.45s ease;
+}
+
+a i:hover {
+  color: $default-font-color-hover;
+  transform: scale(1.1);
+}
+
+.bx-cart {
+  position: relative;
+  padding: 5px;
+}
+
+.count-itens-number {
+  background: $default-font-color-hover;
+  border-radius: 200%;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.count-itens-number.show {
+  display: flex;
+}
+
+.count-itens-number.hidden {
+  display: none;
+}
+
+// MODAL START
+
+.modal-header, .modal-footer {
+  padding: 15px 20px;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.modal-subtitle {
+  width: 100%;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.modal-body {
+  padding: 15px 20px 15px 20px;
+  max-height: 300px;
+}
+
+.modal-body .itens-cart {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.itens-cart .item-cart {
+  width: 100%;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #9999;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  position: relative;
+}
+
+.itens-cart .item-cart img {
+  width: 70px;
+  height: auto;
+}
+
+.itens-cart .item-cart .item-cart-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.itens-cart .item-cart .total-item-cart-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.item-cart .remove-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.item-cart .remove-item .bx-x {
+  color: #e63054;
+  cursor: pointer;
+  font-size: 25px;
+  transition: all .42s ease;
+  position: absolute;
+  right: 0;
+}
+
+.item-cart .remove-item .bx-x:hover {
+  color: #c12847;
+  transform: scale(1.2);
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-footer .total-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.modal-footer .total-info .show-total {
+  text-decoration: line-through;
+}
+
+.modal-footer .total-info p, #total-price {
+  width: 120px;
+}
+
+#discount {
+  margin-bottom: 8px;
+  border-bottom: 1px solid #9999;
+}
+
+#total-price {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.buttons {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-footer .buttons button {
+  padding: 10px 15px;
+}
+
+// MODAL END
+
+.dropdown-hover {
+  position: absolute;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid #9999;
+  right: 10px;
+  display: none;
+}
+
+.cart-content:hover  .dropdown-hover {
+  display: flex;
+}
+
+@media(max-width: 900px) {
+  .dropdown-hover {
+    right: 9%;
+  }
+}

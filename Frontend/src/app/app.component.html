@@ -4,12 +4,11 @@
     <img src="/assets/images/logo.png" alt="">
   </a>
 
-  <!-- TODO: Add category dropdown -->
   <app-product-category-menu></app-product-category-menu>
   <div class="nav-icon">
     <a (click)="showSearchBar()"><i class='bx bx-search'></i></a>
     <a href="#"><i class='bx bxs-user' ></i></a>
-    <a href="#"><i class='bx bx-cart'></i></a>
+    <app-cart-status></app-cart-status>
     <div class="bx bx-menu bx-sm" id="menu-icon"></div>
   </div>
 </header>
