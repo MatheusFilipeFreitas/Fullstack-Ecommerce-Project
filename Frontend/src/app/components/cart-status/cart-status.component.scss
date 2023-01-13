@@ -55,8 +55,9 @@ a i:hover {
 }
 
 .modal-body {
-  padding: 15px 20px 15px 20px;
+  padding: 20px 20px 20px 0px;
   max-height: 300px;
+  overflow-x: hidden;
 }
 
 .modal-body .itens-cart {
@@ -77,9 +78,15 @@ a i:hover {
   position: relative;
 }
 
+.itens-cart .cart-item-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .itens-cart .item-cart img {
-  width: 70px;
-  height: auto;
+  width: 100px;
+  height: 70px;
 }
 
 .itens-cart .item-cart .item-cart-info {
@@ -89,30 +96,64 @@ a i:hover {
 }
 
 .itens-cart .item-cart .total-item-cart-price {
+  width: 100%;
+  display: inline;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.itens-cart .item-cart .total-item-cart-price .quantity-col {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
-.item-cart .remove-item {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.itens-cart .item-cart .total-item-cart-price .quantity-col p {
+  padding-top: 15px;
 }
 
-.item-cart .remove-item .bx-x {
-  color: #e63054;
-  cursor: pointer;
-  font-size: 25px;
-  transition: all .42s ease;
-  position: absolute;
-  right: 0;
+.itens-cart .item-cart .total-item-cart-price .quantity-col button {
+  margin-inline: 15px;
 }
 
-.item-cart .remove-item .bx-x:hover {
-  color: #c12847;
-  transform: scale(1.2);
+.itens-cart .item-cart .total-item-cart-price .quantity-col .minus i {
+  color: white;
+}
+
+
+@media(max-width: 900px) {
+
+  .modal-body {
+    padding: 20px 40px 20px 20px;
+  }
+
+  .itens-cart .item-cart {
+    display: inline;
+  }
+
+  .itens-cart .item-cart img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .itens-cart .item-cart .item-cart-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .itens-cart .item-cart .total-item-cart-price .remove {
+    margin-left: 44%;
+  }
+
+}
+
+.alert {
+  width: 200px;
 }
 
 .modal-footer {
@@ -130,6 +171,7 @@ a i:hover {
 
 .modal-footer .total-info .show-total {
   text-decoration: line-through;
+  margin-bottom: -2px;
 }
 
 .modal-footer .total-info p, #total-price {
@@ -137,6 +179,10 @@ a i:hover {
 }
 
 #discount {
+  margin-bottom: -1px;
+}
+
+#shipping {
   margin-bottom: 8px;
   border-bottom: 1px solid #9999;
 }
@@ -170,10 +216,6 @@ a i:hover {
   border-radius: 5px;
   border: 1px solid #9999;
   right: 10px;
-  display: none;
-}
-
-.cart-content:hover  .dropdown-hover {
   display: flex;
 }
 

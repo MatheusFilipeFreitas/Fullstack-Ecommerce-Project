@@ -1,8 +1,8 @@
  <!-- CART MODAL START -->
  <ng-template #longContent let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Card</h4>
-    <h6 class="modal-subtitle">Total Un.: {{ totalQuantity }}</h6>
+    <h4 class="modal-title" id="modal-basic-title">Cart</h4>
+    <h6 class="modal-subtitle">Total Quantity: {{ totalQuantity }}</h6>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
@@ -10,28 +10,45 @@
 
       <!-- ITEM CART START -->
 
-      <li class="item-cart">
-        <img src="/assets/images/products/placeholder.png" alt="item-img">
+      <div *ngIf="cartItems?.length == 0" class="alert alert-primary" role="alert">
+        Shopping cart empty.
+      </div>
+
+      <li class="item-cart" *ngFor="let tempCartItem of cartItems">
+        <div class="cart-item-image">
+          <img src="{{ tempCartItem.imageUrl }}" alt="item-img">
+        </div>
         <div class="item-cart-info">
-          <h5>Product name</h5>
+          <h5>{{ tempCartItem.name }}</h5>
           <!-- TODO: Add or remove un. -->
-          <p>Un: 3</p>
-          <p>$0.00</p>
+          <p>{{ tempCartItem.unitPrice | currency: 'BRL' }}</p>
         </div>
         <div class="total-item-cart-price">
-          <p>Total: $0.00</p>
-        </div>
-        <div class="remove-item">
-          <i class="bx bx-x"></i>
+          <p>Quantity:</p>
+          <div class="row no-gutters">
+            <div class="quantity-col">
+              <button (click)="incrementQuantity(tempCartItem)" class="btn btn-success btn-sm plus">
+                <i class="bx bx-plus"></i>
+              </button>
+              <p>{{ tempCartItem.quantity }}</p>
+              <button (click)="decrementQuantity(tempCartItem)" class="btn btn-warning btn-sm minus">
+                <i class="bx bx-minus"></i>
+              </button>
+            </div>
+          </div>
+          <p>Subtotal: {{ tempCartItem.quantity * tempCartItem.unitPrice | currency: 'BRL' }}</p>
+          <button (click)="remove(tempCartItem)" class="btn btn-danger btn-sm remove"><i class="bx bx-trash"></i></button>
         </div>
       </li>
       <!-- ITEM CART END -->
+
     </ul>
   </div>
   <div class="modal-footer">
-    <div class="total-info">
+    <div *ngIf="cartItems?.length > 0" class="total-info">
       <p class="show-total">Total: {{ totalPrice | currency: 'BRL' }}</p>
       <p id="discount">Discount: 0.00%</p>
+      <p id="shipping">Shipping: FREE</p>
       <!-- TODO: Add the discount if is not equal  -->
       <h6 id="total-price">Total: {{ totalPrice | currency: 'BRL' }}</h6>
     </div>
@@ -45,7 +62,6 @@
 <div class="cart-content">
   <a (click)="openScrollableContent(longContent)">
     <i class='bx bx-cart'>
-      <!-- TODO: if cart has itens then show the element above -->
     <div class="count-itens-number" [ngClass]="totalQuantity > 0 ? 'show' : 'hidden'">
     </div>
     </i>

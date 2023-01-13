@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CartService } from 'src/app/services/cart.service';
+import { CartItem } from './../../common/cart-item';
 
 
 @Component({
@@ -12,7 +13,9 @@ export class CartStatusComponent implements OnInit {
 
   closeResult = '';
   totalPrice: number = 0;
+  totalPriceFinal: number = 0;
   totalQuantity: number = 0;
+  cartItems: CartItem[] = [];
 
   ngOnInit(): void {
     this.updateCartStatus();
@@ -22,8 +25,21 @@ export class CartStatusComponent implements OnInit {
 
   }
 
+  incrementQuantity(theCartItem: CartItem) {
+    this.cartService.addToCart(theCartItem);
+  }
+
+  decrementQuantity(theCartItem: CartItem) {
+    this.cartService.decrementQuantity(theCartItem);
+  }
+
+  remove(theCartItem: CartItem) {
+    this.cartService.remove(theCartItem);
+  }
+
   // Cart methods
   openScrollableContent(longContent: any) {
+    this.listCartDetails();
     this.modalService.open(longContent, { scrollable: true }).result.then(
       (result) => {
         this.closeResult = `Closed with: ${result}`;
@@ -32,6 +48,23 @@ export class CartStatusComponent implements OnInit {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       },
     );
+  }
+
+  listCartDetails() {
+    //get a handle to the cart items
+    this.cartItems = this.cartService.cartItems;
+
+    this.cartService.totalPrice.subscribe(
+      data => this.totalPrice = data
+    );
+
+    this.cartService.totalQuantity.subscribe(
+      data => this.totalQuantity = data
+    );
+
+    this.cartService.computeCartTotals();
+
+    // TODO: calculate the finalTotalPrice by deacreasing the totalPrice discount
   }
 
   private getDismissReason(reason: any): string {
