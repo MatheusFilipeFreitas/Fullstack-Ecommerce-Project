@@ -54,7 +54,8 @@
     </div>
     <div class="buttons">
       <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')">Keep shopping</button>
-      <button type="button" class="btn btn-outline-success">Checkout</button>
+      <!-- TODO: Create method to navigate and check if the cart have any items -->
+      <button (click)="modal.close('Save click')" routerLink="/checkout" type="button" class="btn btn-outline-success">Checkout</button>
     </div>
   </div>
 </ng-template>

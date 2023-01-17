@@ -1,0 +1,138 @@
+<div class="checkout">
+  <!-- TODO: Change this form to singup form and here show the resume -->
+  <form [formGroup]="checkoutFormGroup">
+    <div class="form-title">
+      <h2>Payment Form</h2>
+    </div>
+    <div formGroupName="customer" class="account-area">
+      <h4>Account</h4>
+      <div class="row">
+        <div class="form-floating col-6">
+          <input formControlName="firstName" type="text" class="form-control" id="floatingInput" placeholder="First Name">
+          <label for="floatingInput">First Name</label>
+        </div>
+        <div class="form-floating col-6">
+          <input formControlName="lastName" type="text" class="form-control" id="floatingInput" placeholder="Last Name">
+          <label for="floatingInput">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-floating mb-3">
+          <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email</label>
+        </div>
+      </div>
+    </div>
+
+    <div formGroupName="shipping" class="shipping-address">
+      <h4>Shipping {{ !sameBillingShippings ? 'and Billing' : '' }} Address</h4>
+      <div class="row">
+        <div class="form-floating col-6">
+          <input formControlName="zipCode" type="text" class="form-control" id="floatingInput" placeholder="ZIP Code">
+          <label for="floatingInput">ZIP Code</label>
+        </div>
+      </div>
+      <!-- TODO: Change State and country to dropdown list -->
+      <div class="row">
+        <div class="form-floating col-7">
+          <input formControlName="state" type="text" class="form-control" id="floatingInput" placeholder="State">
+          <label for="floatingInput">State</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-floating col-7">
+          <input formControlName="country" type="text" class="form-control" id="floatingInput" placeholder="Country">
+          <label for="floatingInput">Country</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-floating col-7">
+          <input formControlName="city" type="text" class="form-control" id="floatingInput" placeholder="City">
+          <label for="floatingInput">City</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-floating mb-3">
+          <input formControlName="street" type="text" class="form-control" id="floatingInput" placeholder="Street">
+          <label for="floatingInput">Street</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-space">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" (change)="copyShippingToBillingAddress($event)" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Use the same Address for billing</label>
+      </div>
+    </div>
+
+    <div formGroupName="billing" class="shipping-address" [ngClass]="sameBillingShippings ? 'show' : 'hidden'">
+      <h4>Billing Address</h4>
+      <div class="row">
+        <div class="form-floating col-6">
+          <input formControlName="zipCode" type="text" class="form-control" id="floatingInput" placeholder="ZIP Code">
+          <label for="floatingInput">ZIP Code</label>
+        </div>
+      </div>
+      <!-- TODO: Change State and country to dropdown list -->
+      <div class="row">
+        <div class="form-floating col-7">
+          <input formControlName="state" type="text" class="form-control" id="floatingInput" placeholder="State">
+          <label for="floatingInput">State</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-floating col-7">
+          <input formControlName="country" type="text" class="form-control" id="floatingInput" placeholder="Country">
+          <label for="floatingInput">Country</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-floating col-7">
+          <input formControlName="city" type="text" class="form-control" id="floatingInput" placeholder="City">
+          <label for="floatingInput">City</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-floating mb-3">
+          <input formControlName="street" type="text" class="form-control" id="floatingInput" placeholder="Street">
+          <label for="floatingInput">Street</label>
+        </div>
+      </div>
+    </div>
+
+    <div formGroupName="payment" class="payment-area">
+      <h4>Payment Details</h4>
+      <div class="row">
+        <div class="form-floating mb-3">
+          <input formControlName="cardName" type="text" class="form-control" id="floatingInput" placeholder="Card Name">
+          <label for="floatingInput">Name on Card</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-floating mb-3">
+          <input formControlName="cardNumber" type="text" class="form-control" id="floatingInput" placeholder="xxxx-xxxx-xxxx-xxxx">
+          <label for="floatingInput">Card Number</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-floating col-4">
+          <input formControlName="cvc" type="text" class="form-control" id="floatingInput" placeholder="xxx">
+          <label for="floatingInput">CVC</label>
+        </div>
+        <div class="form-floating col-4">
+          <input formControlName="expMonth" type="number" class="form-control" id="floatingInput" placeholder="xxx">
+          <label for="floatingInput">Month</label>
+        </div>
+        <div class="form-floating col-4">
+          <input formControlName="expYear" type="number" class="form-control" id="floatingInput" placeholder="xxx">
+          <label for="floatingInput">Year</label>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button (click)="onSubmit()" class="btn btn-primary col-5">Submit</button>
+    </div>
+  </form>
+</div>
+

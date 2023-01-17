@@ -4,6 +4,8 @@ $background: #f6f6f6;
 
 .product {
   margin-top: 170px;
+  margin-left: 50px;
+  margin-right: 50px;
   margin-bottom: 170px;
   display: flex;
   flex-direction: column;
@@ -32,8 +34,8 @@ img {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding-right: 7px;
-  padding-left: 7px;
+  padding-right: 30px;
+  padding-left: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
 }

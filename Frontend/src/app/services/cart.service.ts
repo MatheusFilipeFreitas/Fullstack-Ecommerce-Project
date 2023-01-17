@@ -81,4 +81,6 @@ export class CartService {
     console.log(`totalPrice: ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQuantityValue}`);
   }
 
+  // TODO: create a new method to save the cart in local storage and use this method in all cart movimentations
+
 }
