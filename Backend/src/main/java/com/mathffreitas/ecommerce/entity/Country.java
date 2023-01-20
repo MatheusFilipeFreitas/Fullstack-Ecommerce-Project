@@ -1,2 +1,30 @@
-package com.mathffreitas.ecommerce.entity;public class Country {
+package com.mathffreitas.ecommerce.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.List;
+
+@Table(name = "country")
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Country {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "code")
+    private String code;
+    @Column(name = "name")
+    private String name;
+    @OneToMany(mappedBy = "country")
+    @JsonIgnore
+    private List<State> states;
 }
